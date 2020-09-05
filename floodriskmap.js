@@ -7,10 +7,10 @@ function createMyMap() {
 
 	//load data files
 	d3.queue()
-		.defer(d3.json, "flood_regions.geojson")  // flood regions (5)
-		.defer(d3.json, "cities.geojson") // city polygons in flood regions
-		.defer(d3.json, "flood_events.geojson") // lat-long points for flood events
-		.defer(d3.json,"flood_events_polygon_area.geojson")
+		.defer(d3.json, "https://raw.githubusercontent.com/anupamabalaji/quiltpublictest/master/flood_regions.geojson")  // flood regions (5)
+		.defer(d3.json, "https://raw.githubusercontent.com/anupamabalaji/quiltpublictest/master/cities.geojson") // city polygons in flood regions
+		.defer(d3.json, "https://raw.githubusercontent.com/anupamabalaji/quiltpublictest/master/flood_events.geojson") // lat-long points for flood events
+		.defer(d3.json,"https://raw.githubusercontent.com/anupamabalaji/quiltpublictest/master/flood_events_polygon_area.geojson")
 		.await(ready);
 
 	

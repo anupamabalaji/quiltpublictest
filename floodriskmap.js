@@ -26,12 +26,12 @@ function createMyMap() {
 		var parseDate = d3.timeParse("%m/%d/%y");
 
 		var margin = {top:-50, right:50, bottom:0, left:150},
-		    width = 540 - margin.left - margin.right,
+		    width = 740 - margin.left - margin.right,
 		    height = 150 - margin.top - margin.bottom;
 
 		var svg = d3.select("#vis")
 		    .append("svg")
-		    .attr("width", width + margin.left + margin.right)
+		    .attr("width", 740)
 		    .attr("height", 75);
 
 		var startDate = new Date("1985-01-01"),

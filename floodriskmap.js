@@ -26,7 +26,7 @@ function createMyMap() {
 		var parseDate = d3.timeParse("%m/%d/%y");
 
 		var margin = {top:-50, right:50, bottom:0, left:150},
-		    width = 960 - margin.left - margin.right,
+		    width = 740 - margin.left - margin.right,
 		    height = 150 - margin.top - margin.bottom;
 
 		var svg = d3.select("#vis")

@@ -1,3 +1,22 @@
+.square-red {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 3px solid red;
+}
+.square-blue {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 3px solid blue;
+}
+.square-lightblue {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(0, 189, 255, 0.5);
+  border: 3px solid DodgerBlue;
+}
+
 #play-button {
       position: absolute;
       top: 20px;

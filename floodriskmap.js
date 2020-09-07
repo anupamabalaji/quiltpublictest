@@ -1,6 +1,6 @@
 function createMyMap() {
 	//create map and center using point and zoom level
-	var mymap = L.map('mapid').setView([20.944787, 99.492193], 4.0);
+	var mymap = L.map('mapid').setView([20.944787, 99.492193], 4.4);
 
 	//Load first layer of base topographic map
 	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: ''}).addTo(mymap);
@@ -31,7 +31,7 @@ function createMyMap() {
 
 		var svg = d3.select("#vis")
 		    .append("svg")
-		    .attr("width", 740)
+		    .attr("width", "100%")
 		    .attr("height", 75);
 
 		var startDate = new Date("1985-01-01"),
@@ -169,7 +169,7 @@ function createMyMap() {
 
 		//for the text on the maps like legend, city and flood info
 		var info = L.control();  
-		var info1 = L.control();
+		// var info1 = L.control();
 		var info3 = L.control();
 		
 		info.onAdd = function (map) {
@@ -179,167 +179,26 @@ function createMyMap() {
 		    return this._div;
 		};
 
-		info1.onAdd = function (map) {
-		    this._div = L.DomUtil.create('div', 'info1'); // create a div with a class "info"
-		    this._div.innerHTML='\
-		    <div class="wrapper">\
-				<div class="table">\
-				    \
-				    <div class="row header">\
-				      <div class="cell">\
-				        City\
-				      </div>\
-				      <div class="cell">\
-				        SERI\
-				      </div>\
-				      <div class="cell">\
-				        CVI\
-				      </div>\
-				       <div class="cell">\
-				        SERI Class\
-				      </div>\
-				      <div class="cell">\
-				        CVI Class\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				    <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Guwahati\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       56.956 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        51.420\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				\
-				     <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Kolkata\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       71.057 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        100.000\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				    \
-				     <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Dhaka\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       83.812 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        68.551\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				    \
-				     <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Comilla\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       69.772 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        90.594\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				    \
-				     <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Hangzhou\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       58.169 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        75.733\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				    \
-				     <div class="row">\
-				      <div class="cell" style="color:grey;">\
-				        Shanghai\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				       69.103 \
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        95.523\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      <div class="cell" style="color:grey;" >\
-				        High\
-				      </div>\
-				      \
-				    </div>\
-				    \
-				  </div>\
-				  </div>\
-				';
-		    // this.update();
-		    return this._div;
-		};
-
 		info3.onAdd = function(map){
 			this._div = L.DomUtil.create('div','info');
-			this._div.innerHTML='<span style="font-size:45px;color:blue">&#9632;</span> <span style="color:white;vertical-align:5px">Flood Regions</span>\
-			<span style="font-size:45px;color:red">&#9632;</span> <span style="color:white;vertical-align:5px">Flood Events</span>\
+			this._div.innerHTML='<table border="0">\
+									<tr>\
+										<td class=" square-lightblue"></td>\
+										<td >Flood Regions</td>\
+										<td class=" square-blue"></td>\
+										<td >City Flood Regions</td>\
+										<td class=" square-red"></td>\
+										<td >Flood Events</td>\
+									</tr>\
+								</table>\
 			 ';
 			return this._div;
 		}
 
 		// method that we will use to update the control based on feature properties passed
 		info.update = function (curr_yr,area,dead,displaced) {
-			if (curr_yr != null) {
+
+			if (curr_yr != null && parseFloat(area) > 0) {
 		    	// this._div.innerHTML = '<p>Year: ' + curr_yr + ' Total Affected Area: ' +area+' sq. km. Dead: '+dead+' Displaced: '+displaced+'</p>';
 
 		    	this._div.innerHTML = '\
@@ -359,7 +218,7 @@ function createMyMap() {
 										      <div class="cell">\
 										        Total Affected Area(Sq.Km)\
 										      </div>\
-										      <div class="cell" style="width:100px">'+parseFloat(area).toFixed(2)+'\
+										      <div class="cell" style="width:100px">'+formatNumber(parseFloat(area).toFixed(2))+'\
 										      </div>\
 										      \
 										    </div>\
@@ -386,15 +245,27 @@ function createMyMap() {
 									</div>\
 		    						';
 
+		    } else {
+		    	this._div.innerHTML = '\
+		    							<div class="wrapper">\
+		    								<div class="table">\
+											    <div class="row">\
+											      <div class="cell">\
+			    									No Flood Events\
+			    								  </div>\
+			    								</div>\
+											</div>\
+										</div>';
+
 		    }
 		};
 		info.setPosition('bottomright');
-		info1.setPosition('bottomleft');
+		//info1.setPosition('bottomleft');
 		info3.setPosition('topleft');
 		
 		info.addTo(mymap);
 		info3.addTo(mymap);
-		info1.addTo(mymap);
+		//info1.addTo(mymap);
 
 
 		//adding Shanghai to the map
@@ -431,14 +302,22 @@ function createMyMap() {
 			var area=0, dead=0, displaced = 0; //initializing
 
 			//for each lat-long, get its id and total up the area, dead and displaced
+			centroid_details = []
 			filtered_events.forEach(function(feature){
 				id_array.push(feature.id);
 				area = area+parseFloat(feature.properties.Area);
 				dead = dead+parseInt(feature.properties.Dead);
 				displaced = displaced+parseInt(feature.properties.Displaced);
+				centroid_details.push({id: feature.id, 
+										area: feature.properties.Area, 
+										dead: feature.properties.Dead, 
+										displaced: feature.properties.Displaced,
+										cause: feature.properties.MainCause,
+										began: feature.properties.Began,	
+										ended: feature.properties.Ended});
 
-			})
-				
+			});
+
 			//get polygons list based on the id array
 			filtered_events_polygon = event_polygons.filter(function(feature){
 				return(id_array.indexOf(feature.id) !== -1 )
@@ -452,10 +331,210 @@ function createMyMap() {
 
 			//add new layer with new data
 			flood_events_layer = L.geoJson(filtered_events_polygon, {
-											style:{fillColor:'red',color:'red'}}).addTo(mymap);
+											style:{fillColor:'red',color:'red'}, 
+											onEachFeature: function(feature, layer) {
+																var fontSize = 10;
+																centroid_detail = centroid_details.filter(function(detail) {
+																							return (detail.id === feature.id);
+																				  });
+																layer.bindTooltip("<table border='0' style='font-size: " + fontSize + "px'>" 
+																					+ "<tr><td>Area: </td><td>" + formatNumber(parseFloat(centroid_detail[0].area).toFixed(2)) + " Sq Km</td></tr>"
+																					+ "<tr><td>Began: </td><td>" + centroid_detail[0].began + "</td></tr>"
+																					+ "<tr><td>Ended: </td><td>" + centroid_detail[0].ended + "</td></tr>"
+																					+ "<tr><td>Cause: </td><td>" + centroid_detail[0].cause + "</td></tr>"
+																					+ "<tr><td>Dead: </td><td>" + centroid_detail[0].dead + "</td></tr>"
+																					+ "<tr><td>Displaced: </td><td>" + centroid_detail[0].displaced
+																					+ "</table>", {
+																									className: "label",
+																									permanent: false, //show on hover
+																									direction: "bottom"
+																								}
+																								).openTooltip();
+																
+
+											}}).addTo(mymap);
+
 			
 
 		}
 		
 	}
+
+	addCitiesInfo();
+}
+
+function addCitiesInfo() {
+	d3.select('#citiesInfo').html(
+		'\
+	    <div class="wrapper">\
+			<div class="table">\
+			    \
+			    <div class="row header">\
+			      <div class="cell">\
+			        City\
+			      </div>\
+			      <div class="cell">\
+			        SERI\
+			      </div>\
+			      <div class="cell">\
+			        CVI\
+			      </div>\
+			       <div class="cell">\
+			        SERI Class\
+			      </div>\
+			      <div class="cell">\
+			        CVI Class\
+			      </div>\
+			      <div class="cell">\
+			        Vulnerability Cluster\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			    <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Guwahati\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       56.956 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        51.420\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Indifferent\
+			      </div>\
+			      \
+			    </div>\
+			\
+			     <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Kolkata\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       71.057 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        100.000\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Someone else\'s problem\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			    \
+			     <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Dhaka\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       83.812 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        68.551\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Indifferent\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			    \
+			     <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Comilla\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       69.772 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        90.594\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Someone else\'s problem\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			    \
+			     <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Hangzhou\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       58.169 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        75.733\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Avoidant\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			    \
+			     <div class="row">\
+			      <div class="cell" style="color:grey;">\
+			        Shanghai\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			       69.103 \
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        95.523\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        High\
+			      </div>\
+			      <div class="cell" style="color:grey;" >\
+			        Avoidant\
+			      </div>\
+			      \
+			    </div>\
+			    \
+			  </div>\
+			  </div>\
+			');
+
+}
+
+function formatNumber(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
 }

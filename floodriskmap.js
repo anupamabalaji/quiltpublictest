@@ -184,11 +184,11 @@ function createMyMap() {
 			this._div.innerHTML='<table border="0">\
 									<tr>\
 										<td class=" square-lightblue"></td>\
-										<td >Flood Regions</td>\
+										<td style="color:white;">Flood Regions</td>\
 										<td class=" square-blue"></td>\
-										<td >City Flood Regions</td>\
+										<td style="color:white;">City Area</td>\
 										<td class=" square-red"></td>\
-										<td >Flood Events</td>\
+										<td style="color:white;">Flood Events</td>\
 									</tr>\
 								</table>\
 			 ';

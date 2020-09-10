@@ -203,48 +203,12 @@ function createMyMap() {
 		    	// this._div.innerHTML = '<p>Year: ' + curr_yr + ' Total Affected Area: ' +area+' sq. km. Dead: '+dead+' Displaced: '+displaced+'</p>';
 
 		    	this._div.innerHTML = '\
-		    	 <div class="wrapper">\
-					<div class="table">\
-						\
-					    <div class="row">\
-					      <div class="cell">\
-					        Month\
-					      </div>\
-					      <div class="cell">'+curr_yr+'\
-					      </div>\
-					      \
-					    </div>\
-					    \
-					    <div class="row">\
-										      <div class="cell">\
-										        Total Affected Area(Sq.Km)\
-										      </div>\
-										      <div class="cell" style="width:100px">'+formatNumber(parseFloat(area).toFixed(2))+'\
-										      </div>\
-										      \
-										    </div>\
-					    \
-					    <div class="row">\
-										      <div class="cell">\
-										        Dead\
-										      </div>\
-										      <div class="cell">'+dead+'\
-										      </div>\
-										      \
-										    </div>\
-					    \
-					    <div class="row">\
-										      <div class="cell">\
-										        Displaced\
-										      </div>\
-										      <div class="cell">'+displaced+'\
-										      </div>\
-										      \
-										    </div>\
-					    \
-										</div>\
-									</div>\
-		    						';
+		    	 		<div class="wrapper">\
+					    	<p>Month: '+curr_yr+'</p>\
+						<p>Total Affected Area(Sq.Km): '+formatNumber(parseFloat(area).toFixed(2))+'</p>\
+						<p>Dead: '+dead+'</p>\
+						<p>Displaced: '+displaced+'</p>\
+					</div>\';
 
 		    } else {
 		    	this._div.innerHTML = '\

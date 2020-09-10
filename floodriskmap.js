@@ -208,7 +208,7 @@ function createMyMap() {
 						<p>Total Affected Area(Sq.Km): '+formatNumber(parseFloat(area).toFixed(2))+'</p>\
 						<p>Dead: '+dead+'</p>\
 						<p>Displaced: '+displaced+'</p>\
-					</div>\';
+					</div>';
 
 		    } else {
 		    	this._div.innerHTML = '\

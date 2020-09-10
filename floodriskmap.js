@@ -259,7 +259,7 @@ function createMyMap() {
 
 		    }
 		};
-		info.setPosition('bottomright');
+		info.setPosition('bottomleft');
 		//info1.setPosition('bottomleft');
 		info3.setPosition('topleft');
 		
@@ -367,7 +367,7 @@ function addCitiesInfo() {
 	d3.select('#citiesInfo').html(
 		'\
 	    <div class="wrapper">\
-			<div class="table">\
+			<div class="table overflow-x:auto;">\
 			    \
 			    <div class="row header">\
 			      <div class="cell">\

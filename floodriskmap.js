@@ -214,16 +214,7 @@ function createMyMap() {
 					</div>';
 
 		    } else {
-		    	this._div.innerHTML = '\
-		    							<div class="wrapper">\
-		    								<div class="table">\
-											    <div class="row">\
-											      <div class="cell">\
-			    									No Flood Events\
-			    								  </div>\
-			    								</div>\
-											</div>\
-										</div>';
+		    	this._div.innerHTML = '<div style="color:white;">No Flood Events</div>';
 
 		    }
 		};

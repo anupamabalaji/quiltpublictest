@@ -31,9 +31,10 @@ function createMyMap() {
 
 		var svg = d3.select("#vis")
 		    .append("svg")
-		    .attr("width", "100%")
-		    .attr("height", 75);
-
+// 		    .attr("width", "100%")
+// 		    .attr("height", 75);
+		    .attr("viewBox", "0 0 100% 75");
+		
 		var startDate = new Date("1985-01-01"),
 	    	endDate = new Date("2020-07-31");
 

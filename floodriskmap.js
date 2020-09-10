@@ -94,15 +94,15 @@ function createMyMap() {
 		playButton
 		    .on("click", function() {
 		    var button = d3.select(this);
-		    if (button.text() == "Pause") {
+		    if (button.html() == '<i class="fa fa-pause" stlye="color:white;" aria-hidden="true"></i>') {
 		      moving = false;
 		      clearInterval(timer);
 		      // timer = 0;
-		      button.text('<i class="fa fa-play" stlye="color:white;" aria-hidden="true"></i>');
+		      button.html('<i class="fa fa-play" stlye="color:white;" aria-hidden="true"></i>');
 		    } else {
 		      moving = true;
 		      timer = setInterval(step, 500);
-		      button.text('<i class="fa fa-pause" stlye="color:white;" aria-hidden="true"></i>');
+		      button.html('<i class="fa fa-pause" stlye="color:white;" aria-hidden="true"></i>');
 		    }
 		    console.log("Slider moving: " + moving);
 		  })

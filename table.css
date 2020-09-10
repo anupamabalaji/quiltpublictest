@@ -24,7 +24,7 @@ body {
       position: absolute;
       top: 20px;
       left: 50px;
-      background: #f08080;
+      background: #663a82;
       padding-right: 26px;
       border-radius: 3px;
       border: none;
@@ -75,7 +75,7 @@ body {
       stroke-width: 1.25px;
     }
 .label {
-      font: 14px/16px Arial, Helvetica, sans-serif;
+      /* font: 12px/14px Arial, Helvetica, sans-serif; */
       font-weight: 700;
       color: white;
       /*text-transform: uppercase;*/
@@ -90,7 +90,7 @@ body {
 .info {
     padding: 6px 8px;
     color: grey;
-    font: 12px/14px Arial, Helvetica, sans-serif;
+    /* font: 12px/14px Arial, Helvetica, sans-serif; */
     font-weight: 700;
     background: transparent;
     /*background: rgba(255,255,255,0.8);
@@ -141,7 +141,7 @@ body {
 .row.header {
   font-weight: 900;
   color: #ffffff;
-  background: #ea6153;
+  background: #a9a9a9;
 }
 .row.green {
   background: #27ae60;
@@ -158,9 +158,9 @@ body {
     padding: 0;
     height: 6px;
   }
-  .row.header .cell {
+/*   .row.header .cell {
     display: none;
-  }
+  } */
   .row .cell {
     margin-bottom: 10px;
   }

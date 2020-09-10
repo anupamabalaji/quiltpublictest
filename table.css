@@ -1,4 +1,7 @@
 body {
+    font: 12px/14px Montserrat, Helvetica, sans-serif;
+}
+#mapid {
     overflow:hidden;
 }
 .square-red {

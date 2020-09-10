@@ -360,7 +360,7 @@ function createMyMap() {
 		
 	}
 
-	addCitiesInfo();
+	//addCitiesInfo();
 }
 
 function addCitiesInfo() {

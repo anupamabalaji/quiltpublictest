@@ -1,11 +1,9 @@
 function createMyMap() {
 	//create map and center using point and zoom level
-	var mymap = L.map('mapid').setView([20.944787, 99.492193], 4.4);
-	
-	L.map('mapid', {
+	var mymap = L.map('mapid', {
 	    dragging: !L.Browser.mobile,
 	    tap: !L.Browser.mobile
-	})
+	})).setView([20.944787, 99.492193], 4.4);
 
 	//Load first layer of base topographic map
 	L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: ''}).addTo(mymap);

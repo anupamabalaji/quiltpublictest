@@ -116,7 +116,7 @@ function createMyMap() {
 		    currentValue = 0;
 		    clearInterval(timer);
 		    // timer = 0;
-		    playButton.text("Play");
+		    button.html('<i class="fa fa-play" stlye="color:white;" aria-hidden="true"></i>');
 		    console.log("Slider moving: " + moving);
 		  }
 		}
@@ -203,7 +203,7 @@ function createMyMap() {
 		    	// this._div.innerHTML = '<p>Year: ' + curr_yr + ' Total Affected Area: ' +area+' sq. km. Dead: '+dead+' Displaced: '+displaced+'</p>';
 
 		    	this._div.innerHTML = '\
-		    	 		<div class="wrapper">\
+		    	 		<div style="color:white;">\
 					    	<p>Month: '+curr_yr+'</p>\
 						<p>Total Affected Area(Sq.Km): '+formatNumber(parseFloat(area).toFixed(2))+'</p>\
 						<p>Dead: '+dead+'</p>\
